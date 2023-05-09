@@ -1,0 +1,85 @@
+<router-outlet></router-outlet>
+
+<div id="qrcode"></div>
+
+<hr>
+
+<div>
+  <label>Ingrese url:</label>
+  <br>
+  <input
+    type="text"
+    [(ngModel)]="qrdata"
+    placeholder="google.com"
+  >
+</div>
+
+<br>
+
+<div>
+  <label>Ingrese texto alternativo:</label>
+  <br>
+  <input
+    type="text"
+    [(ngModel)]="alt"
+    placeholder="Texto alternativo"
+  >
+</div>
+
+<br>
+
+<div>
+  <label>Ingrese texto aria:</label>
+  <br>
+  <input
+    type="text"
+    [(ngModel)]="ariaLabel"
+    placeholder="Texto aria"
+  >
+</div>
+
+<br>
+
+<div>
+  <label>Ingrese color:</label>
+  <br>
+  <input
+    type="text"
+    [(ngModel)]="colorDark"
+    placeholder="#888"
+  >
+</div>
+
+<br>
+
+<div>
+  <label>Ingrese background color:</label>
+  <br>
+  <input
+    type="text"
+    [(ngModel)]="colorLight"
+    placeholder="#f30000"
+  >
+</div>
+
+<hr>
+
+<qrcode
+  [qrdata]="qrdata"
+  [allowEmptyString]="true"
+  [alt]="alt"
+  [ariaLabel]="ariaLabel"
+  [colorDark]="colorDark"
+  [colorLight]="colorLight"
+  [elementType]="'img'"
+  [errorCorrectionLevel]="'L'"
+  [imageSrc]="'./assets/test.png'"
+  [imageHeight]="100"
+  [imageWidth]="100"
+  [margin]="4"
+  [scale]="6"
+  [title]="'Mi título de ejemplo'"
+  [version]="6"
+  [width]="256"
+>
+</qrcode>
